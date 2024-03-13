@@ -1,8 +1,8 @@
 /**
  * Class WordGuessingGame.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (202200131_202200130)
+ * @version (13-03-2024)
  */
 public class WordGuessingGame
 {
