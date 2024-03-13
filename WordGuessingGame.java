@@ -10,14 +10,16 @@ public class WordGuessingGame
     private String guessedWord;
     private int numberOfTries;
     private InputReader reader;
+    private WordGenerator chosenWord;
     
     /**
      * Constructor for objects of class WordGuessingGame
      */
     public WordGuessingGame()
     {
-        this.hiddenWord = "abc";
-        this.guessedWord = "___";
+        this.chosenWord = new WordGenerator();
+        this.hiddenWord = chosenWord.generateWord();
+        this.guessedWord = initializeGuessedWord();
         this.numberOfTries = 0;
         this.reader = new InputReader();
     }
@@ -59,6 +61,14 @@ public class WordGuessingGame
     
     private void showResult(){
         System.out.println("Conseguiu resolver em " + this.numberOfTries + " tentativas!");
+    }
+    
+    public String initializeGuessedWord(){
+        StringBuilder result = new StringBuilder();
+        for(int i=0; i < hiddenWord.length(); i++){
+            result.append("_");
+        }
+        return result.toString();
     }
     
     public void play(){
